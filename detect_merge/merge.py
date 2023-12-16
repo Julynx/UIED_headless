@@ -12,9 +12,11 @@ from detect_merge.Element import Element
 def show_elements(org_img, eles, show=False, win_name='element', wait_key=0, shown_resize=None, line=2):
     color_map = {'Text':(0, 0, 255), 'Compo':(0, 255, 0), 'Block':(0, 255, 0), 'Text Content':(255, 0, 255)}
     img = org_img.copy()
+    print("---- Visualize element loop start ----")
     for ele in eles:
         color = color_map[ele.category]
         ele.visualize_element(img, color, line)
+    print("---- Visualize element loop end ----")
     img_resize = img
     if shown_resize is not None:
         img_resize = cv2.resize(img, shown_resize)
@@ -24,6 +26,7 @@ def show_elements(org_img, eles, show=False, win_name='element', wait_key=0, sho
         if wait_key == 0:
             # cv2.destroyWindow(win_name)
             pass
+    print("---- Exiting show_elements... ----")
     return img_resize
 
 
