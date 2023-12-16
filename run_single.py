@@ -1,3 +1,4 @@
+print("Importing packages...")
 from os.path import join as pjoin
 import cv2
 import os
@@ -47,6 +48,7 @@ if __name__ == '__main__':
         mobile: {'min-grad':4, 'ffl-block':5, 'min-ele-area':50, 'max-word-inline-gap':6, 'max-line-gap':1}
         web   : {'min-grad':3, 'ffl-block':5, 'min-ele-area':25, 'max-word-inline-gap':4, 'max-line-gap':4}
     '''
+    print("Entering main function...")
     key_params = {'min-grad':10, 'ffl-block':5, 'min-ele-area':50,
                   'merge-contained-ele':True, 'merge-line-to-paragraph':False, 'remove-bar':True}
 
