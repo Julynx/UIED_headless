@@ -53,7 +53,7 @@ while 1:
 
     binary = pre.binarization(org, grad_min)
     binary_r = pre.reverse_binary(binary)
-    # blk.block_division(grey, grad_thresh=grad_min_blk, step_v=10, step_h=10, show=True)
+    # blk.block_division(grey, grad_thresh=grad_min_blk, step_v=10, step_h=10, show=False)
     # cv2.imshow('bijn', binary)
     # cv2.imshow('r', binary_r)
     cv2.waitKey(10)

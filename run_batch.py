@@ -69,6 +69,6 @@ if __name__ == '__main__':
             import merge
             compo_path = pjoin(output_root, 'ip', str(index) + '.json')
             ocr_path = pjoin(output_root, 'ocr', str(index) + '.json')
-            merge.merge(input_img, compo_path, ocr_path, output_root, is_remove_top=key_params['remove-top-bar'], show=True)
+            merge.merge(input_img, compo_path, ocr_path, output_root, is_remove_top=key_params['remove-top-bar'], show=False)
 
         num += 1

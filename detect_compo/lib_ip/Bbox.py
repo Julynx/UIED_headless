@@ -76,7 +76,7 @@ class Bbox:
         # org_iou, _ = pre.read_img('uied/data/input/7.jpg', 800)
         # print(iou, ioa, iob)
         # board = draw.draw_bounding_box(org_iou, [self], color=(255,0,0))
-        # draw.draw_bounding_box(board, [bbox_b], color=(0,255,0), show=True)
+        # draw.draw_bounding_box(board, [bbox_b], color=(0,255,0), show=False)
 
         # contained by b
         if ioa >= 1:

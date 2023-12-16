@@ -73,7 +73,7 @@ def view_gt_all(gt, img_root):
         compos = gt[img_id]
         img = cv2.imread(pjoin(img_root, img_id + '.jpg'))
         print(pjoin(img_root, img_id + '.jpg'))
-        draw_bounding_box_class(img, compos, show=True)
+        draw_bounding_box_class(img, compos, show=False)
 
 
 def view_gt_single(gt, img_root, img_id):
@@ -81,7 +81,7 @@ def view_gt_single(gt, img_root, img_id):
     compos = gt[img_id]
     img = cv2.imread(pjoin(img_root, img_id + '.jpg'))
     print(pjoin(img_root, img_id + '.jpg'))
-    draw_bounding_box_class(img, compos, show=True)
+    draw_bounding_box_class(img, compos, show=False)
 
 
 gt = load_ground_truth_json('E:\\Mulong\\Datasets\\rico\\instances_test.json', no_text=False)

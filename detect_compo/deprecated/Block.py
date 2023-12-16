@@ -24,7 +24,7 @@ class Block(Component):
         '''
         row, column = image_shape[:2]
         # print(height, height / row, max_compo_scale[0], height / row > max_compo_scale[0])
-        # draw.draw_bounding_box(org, [corner], show=True)
+        # draw.draw_bounding_box(org, [corner], show=False)
         # ignore atomic components
         if self.bbox.height / row > max_compo_scale[0] or self.bbox.width / column > max_compo_scale[1]:
             return False

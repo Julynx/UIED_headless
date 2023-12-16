@@ -141,7 +141,7 @@ class Component:
                     if abnm / len(border) > 0.1:
                         if test:
                             print('abnms', abnm, abnm / len(border))
-                            draw.draw_boundary([self], self.image_shape, show=True)
+                            draw.draw_boundary([self], self.image_shape, show=False)
                         self.rect_ = False
                         return False
                     continue
@@ -163,12 +163,12 @@ class Component:
             if pit / len(border) > max_dent_ratio:
                 if test:
                     print('pit', pit, pit / len(border))
-                    draw.draw_boundary([self], self.image_shape, show=True)
+                    draw.draw_boundary([self], self.image_shape, show=False)
                 self.rect_ = False
                 return False
         if test:
             print(flat / parameter, '\n')
-            draw.draw_boundary([self], self.image_shape, show=True)
+            draw.draw_boundary([self], self.image_shape, show=False)
         # ignore text and irregular shape
         if self.height / self.image_shape[0] > 0.3:
             min_rec_evenness = 0.85

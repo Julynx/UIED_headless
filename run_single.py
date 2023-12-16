@@ -72,7 +72,7 @@ if __name__ == '__main__':
         os.makedirs(pjoin(output_root, 'ocr'), exist_ok=True)
 
         print("Running 'text.text_detection()'...")
-        text.text_detection(input_path_img, output_root, show=True, method='google')
+        text.text_detection(input_path_img, output_root, show=False, method='google')
 
     if is_ip:
         import detect_compo.ip_region_proposal as ip
@@ -99,6 +99,6 @@ if __name__ == '__main__':
 
         print("Running 'merge.merge()'...")
         merge.merge(input_path_img, compo_path, ocr_path, pjoin(output_root, 'merge'),
-                    is_remove_bar=key_params['remove-bar'], is_paragraph=key_params['merge-line-to-paragraph'], show=True)
+                    is_remove_bar=key_params['remove-bar'], is_paragraph=key_params['merge-line-to-paragraph'], show=False)
 
     print("Done!")

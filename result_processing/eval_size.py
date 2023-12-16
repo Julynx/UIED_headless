@@ -85,7 +85,7 @@ def load_ground_truth_json(gt_file):
     return compos
 
 
-def eval(detection, ground_truth, img_root, show=True, no_text=False, only_text=False):
+def eval(detection, ground_truth, img_root, show=False, no_text=False, only_text=False):
     def compo_filter(compos, flag):
         if not no_text and not only_text:
             return compos
@@ -193,7 +193,7 @@ def eval(detection, ground_truth, img_root, show=True, no_text=False, only_text=
             print(image_id + '.jpg')
             # # cv2.imshow('org', cv2.resize(img, (500, 1000)))
             broad = draw_bounding_box(img, d_compos['bboxes'], color=(255, 0, 0), line=3)
-            draw_bounding_box(broad, gt_compos['bboxes'], color=(0, 0, 255), show=True, line=2)
+            draw_bounding_box(broad, gt_compos['bboxes'], color=(0, 0, 255), show=False, line=2)
 
         if i % 200 == 0:
             precision = [round(TP[i] / (TP[i] + FP[i]),3) for i in range(len(TP))]

@@ -74,7 +74,7 @@ if __name__ == '__main__':
                 classifier['Elements'] = CNN('Elements')
                 # classifier['Noise'] = CNN('Noise')
             ip.compo_detection(input_path_img, output_root, key_params,
-                               classifier=classifier, resize_by_height=resized_height, show=True, wai_key=10)
+                               classifier=classifier, resize_by_height=resized_height, show=False, wai_key=10)
 
     if testing_merge:
         cv2.createTrackbar('max-word-inline-gap', 'parameters', 4, 20, nothing)
@@ -86,4 +86,4 @@ if __name__ == '__main__':
             name = input_path_img.split('/')[-1][:-4]
             compo_path = pjoin(output_root, 'ip', str(name) + '.json')
             ocr_path = pjoin(output_root, 'ocr', str(name) + '.json')
-            merge.merge(input_path_img, compo_path, ocr_path, output_root=None, is_remove_top=key_params['remove-top-bar'], show=True, wait_key=10)
+            merge.merge(input_path_img, compo_path, ocr_path, output_root=None, is_remove_top=key_params['remove-top-bar'], show=False, wait_key=10)
