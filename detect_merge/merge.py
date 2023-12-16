@@ -22,7 +22,7 @@ def show_elements(org_img, eles, show=False, win_name='element', wait_key=0, sho
         # cv2.imshow(win_name, img_resize)
         cv2.waitKey(wait_key)
         if wait_key == 0:
-            cv2.destroyWindow(win_name)
+            # cv2.destroyWindow(win_name)
     return img_resize
 
 

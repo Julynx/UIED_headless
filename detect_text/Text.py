@@ -178,4 +178,4 @@ class Text:
             print(self.content)
             # cv2.imshow('text', img)
             cv2.waitKey()
-            cv2.destroyWindow('text')
+            # cv2.destroyWindow('text')

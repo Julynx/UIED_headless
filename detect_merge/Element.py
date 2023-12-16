@@ -102,4 +102,4 @@ class Element:
         if show:
             # cv2.imshow('element', img)
             cv2.waitKey(0)
-            cv2.destroyWindow('element')
+            # cv2.destroyWindow('element')
