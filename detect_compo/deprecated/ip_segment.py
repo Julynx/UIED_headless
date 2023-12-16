@@ -33,7 +33,7 @@ def clipping(img, components, pad=0, show=False):
         clip = component.compo_clipping(img, pad=pad)
         clips.append(clip)
         if show:
-            cv2.imshow('clipping', clip)
+            # cv2.imshow('clipping', clip)
             cv2.waitKey()
     return clips
 

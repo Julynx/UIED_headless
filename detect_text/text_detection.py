@@ -31,7 +31,7 @@ def visualize_texts(org_img, texts, shown_resize_height=None, show=False, write_
         img_resize = cv2.resize(img, (int(shown_resize_height * (img.shape[1]/img.shape[0])), shown_resize_height))
 
     if show:
-        cv2.imshow('texts', img_resize)
+        # cv2.imshow('texts', img_resize)
         cv2.waitKey(0)
         cv2.destroyWindow('texts')
     if write_path is not None:

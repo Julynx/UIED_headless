@@ -54,8 +54,8 @@ while 1:
     binary = pre.binarization(org, grad_min)
     binary_r = pre.reverse_binary(binary)
     # blk.block_division(grey, grad_thresh=grad_min_blk, step_v=10, step_h=10, show=True)
-    cv2.imshow('bijn', binary)
-    cv2.imshow('r', binary_r)
+    # cv2.imshow('bijn', binary)
+    # cv2.imshow('r', binary_r)
     cv2.waitKey(10)
 
     # canny = cv2.Canny(grey, c1, c2)
@@ -66,7 +66,7 @@ while 1:
     # b_contour = cv2.hconcat([b_contour, c_contour])
     # binary = cv2.hconcat([binary, binary_r, canny])
 
-    # cv2.imshow('org', org)
-    # cv2.imshow('b_cnt', b_contour)
-    # cv2.imshow('bin', binary)
-    # cv2.imshow('canny', canny)
+    # # cv2.imshow('org', org)
+    # # cv2.imshow('b_cnt', b_contour)
+    # # cv2.imshow('bin', binary)
+    # # cv2.imshow('canny', canny)

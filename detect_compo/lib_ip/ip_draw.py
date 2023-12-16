@@ -26,7 +26,7 @@ def draw_bounding_box_class(org, components, color_map=C.COLOR, line=2, show=Fal
         board = cv2.rectangle(board, (bbox[0], bbox[1]), (bbox[2], bbox[3]), color_map[compo.category], line)
         # board = cv2.putText(board, compo.category, (bbox[0]+5, bbox[1]+20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color_map[compo.category], 2)
     if show:
-        cv2.imshow(name, board)
+        # cv2.imshow(name, board)
         cv2.waitKey(0)
     if write_path is not None:
         cv2.imwrite(write_path, board)
@@ -52,7 +52,7 @@ def draw_bounding_box(org, components, color=(0, 255, 0), line=2,
         bbox = compo.put_bbox()
         board = cv2.rectangle(board, (bbox[0], bbox[1]), (bbox[2], bbox[3]), color, line)
     if show:
-        cv2.imshow(name, board)
+        # cv2.imshow(name, board)
         if wait_key is not None:
             cv2.waitKey(wait_key)
         if wait_key == 0:
@@ -82,7 +82,7 @@ def draw_line(org, lines, color=(0, 255, 0), show=False):
     for line in line_v:
         cv2.line(board, tuple(line['head']), tuple(line['end']), color, line['thickness'])
     if show:
-        cv2.imshow('img', board)
+        # cv2.imshow('img', board)
         cv2.waitKey(0)
     return board
 
@@ -106,7 +106,7 @@ def draw_boundary(components, shape, show=False):
         for point in component.boundary[2] + component.boundary[3]:
             board[point[0], point[1]] = 255
     if show:
-        cv2.imshow('rec', board)
+        # cv2.imshow('rec', board)
         cv2.waitKey(0)
     return board
 
@@ -117,7 +117,7 @@ def draw_region(region, broad, show=False):
         broad[point[0], point[1]] = color
 
     if show:
-        cv2.imshow('region', broad)
+        # cv2.imshow('region', broad)
         cv2.waitKey()
     return broad
 
@@ -127,6 +127,6 @@ def draw_region_bin(region, broad, show=False):
         broad[point[0], point[1]] = 255
 
     if show:
-        cv2.imshow('region', broad)
+        # cv2.imshow('region', broad)
         cv2.waitKey()
     return broad

@@ -32,7 +32,7 @@ def is_text(img, min_word_area, show=False):
     if show:
         for d in word: print(d)
         print(area_word/area_total)
-        cv2.imshow('a', broad)
+        # cv2.imshow('a', broad)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
     # no text in this clip or relatively small text area

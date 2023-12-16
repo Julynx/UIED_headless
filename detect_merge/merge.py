@@ -19,7 +19,7 @@ def show_elements(org_img, eles, show=False, win_name='element', wait_key=0, sho
     if shown_resize is not None:
         img_resize = cv2.resize(img, shown_resize)
     if show:
-        cv2.imshow(win_name, img_resize)
+        # cv2.imshow(win_name, img_resize)
         cv2.waitKey(wait_key)
         if wait_key == 0:
             cv2.destroyWindow(win_name)

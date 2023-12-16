@@ -20,7 +20,7 @@ def draw_bounding_box(org, corners, color=(0, 255, 0), line=2, show=False):
     for i in range(len(corners)):
         board = cv2.rectangle(board, (corners[i][0], corners[i][1]), (corners[i][2], corners[i][3]), color, line)
     if show:
-        cv2.imshow('a', board)
+        # cv2.imshow('a', board)
         cv2.waitKey(0)
     return board
 
@@ -191,7 +191,7 @@ def eval(detection, ground_truth, img_root, show=True, no_text=False, only_text=
 
         if show:
             print(image_id + '.jpg')
-            # cv2.imshow('org', cv2.resize(img, (500, 1000)))
+            # # cv2.imshow('org', cv2.resize(img, (500, 1000)))
             broad = draw_bounding_box(img, d_compos['bboxes'], color=(255, 0, 0), line=3)
             draw_bounding_box(broad, gt_compos['bboxes'], color=(0, 0, 255), show=True, line=2)
 

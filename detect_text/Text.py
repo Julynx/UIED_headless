@@ -176,6 +176,6 @@ class Text:
         cv2.rectangle(img, (loc['left'], loc['top']), (loc['right'], loc['bottom']), color, line)
         if show:
             print(self.content)
-            cv2.imshow('text', img)
+            # cv2.imshow('text', img)
             cv2.waitKey()
             cv2.destroyWindow('text')

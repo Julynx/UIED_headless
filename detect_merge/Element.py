@@ -100,6 +100,6 @@ class Element:
         # for child in self.children:
         #     child.visualize_element(img, color=(255, 0, 255), line=line)
         if show:
-            cv2.imshow('element', img)
+            # cv2.imshow('element', img)
             cv2.waitKey(0)
             cv2.destroyWindow('element')

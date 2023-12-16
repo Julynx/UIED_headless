@@ -29,7 +29,7 @@ def draw_bounding_box_class(org, components, color=C.COLOR, line=2, show=False, 
         board = cv2.rectangle(board, (bbox[0], bbox[1]), (bbox[2], bbox[3]), color[C.CLASS_MAP[str(category)]], line)
         board = cv2.putText(board, C.CLASS_MAP[str(category)], (bbox[0]+5, bbox[1]+20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, color[C.CLASS_MAP[str(category)]], 2)
     if show:
-        cv2.imshow('a', cv2.resize(board, (500, 1000)))
+        # cv2.imshow('a', cv2.resize(board, (500, 1000)))
         cv2.waitKey(0)
     if write_path is not None:
         cv2.imwrite(write_path, board)

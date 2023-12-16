@@ -91,7 +91,7 @@ class CNN:
             compos[i].category = Y
             if show:
                 print(Y)
-                cv2.imshow('element', imgs[i])
+                # cv2.imshow('element', imgs[i])
                 cv2.waitKey()
 
     def evaluate(self, data, load=True):

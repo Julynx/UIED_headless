@@ -25,7 +25,7 @@ def color_tips():
     cv2.putText(board, 'Non-text Compo', (10, 70), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
     cv2.putText(board, "Compo's Text Content", (10, 120), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
     cv2.putText(board, "Block", (10, 170), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
-    cv2.imshow('colors', board)
+    # cv2.imshow('colors', board)
 
 
 if __name__ == '__main__':
@@ -51,10 +51,13 @@ if __name__ == '__main__':
                   'merge-contained-ele':True, 'merge-line-to-paragraph':False, 'remove-bar':True}
 
     # set input image path
-    input_path_img = 'data/input/497.jpg'
+    input_path_img = 'data/input/input.jpg'
     output_root = 'data/output'
 
+    print("Resizing the input image...")
     resized_height = resize_height_by_longest_edge(input_path_img, resize_length=800)
+
+    print("Running 'color_tips()'...")
     color_tips()
 
     is_ip = True
@@ -65,6 +68,8 @@ if __name__ == '__main__':
     if is_ocr:
         import detect_text.text_detection as text
         os.makedirs(pjoin(output_root, 'ocr'), exist_ok=True)
+
+        print("Running 'text.text_detection()'...")
         text.text_detection(input_path_img, output_root, show=True, method='google')
 
     if is_ip:
@@ -78,6 +83,8 @@ if __name__ == '__main__':
             # classifier['Image'] = CNN('Image')
             classifier['Elements'] = CNN('Elements')
             # classifier['Noise'] = CNN('Noise')
+
+        print("Running 'compo_detection()'...")
         ip.compo_detection(input_path_img, output_root, key_params,
                            classifier=classifier, resize_by_height=resized_height, show=False)
 
@@ -87,5 +94,9 @@ if __name__ == '__main__':
         name = input_path_img.split('/')[-1][:-4]
         compo_path = pjoin(output_root, 'ip', str(name) + '.json')
         ocr_path = pjoin(output_root, 'ocr', str(name) + '.json')
+
+        print("Running 'merge.merge()'...")
         merge.merge(input_path_img, compo_path, ocr_path, pjoin(output_root, 'merge'),
                     is_remove_bar=key_params['remove-bar'], is_paragraph=key_params['merge-line-to-paragraph'], show=True)
+
+    print("Done!")

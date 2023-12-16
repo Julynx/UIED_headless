@@ -233,6 +233,6 @@ class Component:
         row_max = min(row_max + pad, img.shape[0])
         clip = img[row_min:row_max, column_min:column_max]
         if show:
-            cv2.imshow('clipping', clip)
+            # cv2.imshow('clipping', clip)
             cv2.waitKey()
         return clip

@@ -175,7 +175,7 @@ def rm_line_v_h(binary, show=False, max_line_thickness=C.THRESHOLD_LINE_THICKNES
                 map_line[start_idx + e, l[0]:l[1]] = binary[start_idx + e, l[0]:l[1]]
 
     map_line = np.zeros(binary.shape[:2], dtype=np.uint8)
-    cv2.imshow('binary', binary)
+    # cv2.imshow('binary', binary)
 
     width = binary.shape[1]
     start_row = -1
@@ -218,8 +218,8 @@ def rm_line_v_h(binary, show=False, max_line_thickness=C.THRESHOLD_LINE_THICKNES
     binary -= map_line
 
     if show:
-        cv2.imshow('no-line', binary)
-        cv2.imshow('lines', map_line)
+        # cv2.imshow('no-line', binary)
+        # cv2.imshow('lines', map_line)
         cv2.waitKey()
 
 
@@ -277,7 +277,7 @@ def rm_line(binary,
         binary[start_row: end_row] = 0
 
     if show:
-        cv2.imshow('no-line binary', binary)
+        # cv2.imshow('no-line binary', binary)
         if wait_key is not None:
             cv2.waitKey(wait_key)
         if wait_key == 0:
@@ -527,8 +527,8 @@ def nested_components_detection(grey, org, grad_thresh,
                 compos.append(compo)
                 # draw.draw_region(region, broad)
     if show:
-        cv2.imshow('flood-fill all', broad_all)
-        cv2.imshow('block', broad)
+        # cv2.imshow('flood-fill all', broad_all)
+        # cv2.imshow('block', broad)
         cv2.waitKey()
     if write_path is not None:
         cv2.imwrite(write_path, broad)

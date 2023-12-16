@@ -50,7 +50,7 @@ def reverse_binary(bin, show=False):
     """
     r, bin = cv2.threshold(bin, 1, 255, cv2.THRESH_BINARY_INV)
     if show:
-        cv2.imshow('binary_rev', bin)
+        # cv2.imshow('binary_rev', bin)
         cv2.waitKey()
     return bin
 
@@ -63,7 +63,7 @@ def binarization(org, grad_min, show=False, write_path=None, wait_key=0):
     if write_path is not None:
         cv2.imwrite(write_path, morph)
     if show:
-        cv2.imshow('binary', morph)
+        # cv2.imshow('binary', morph)
         if wait_key is not None:
             cv2.waitKey(wait_key)
     return morph

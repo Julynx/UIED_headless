@@ -37,8 +37,8 @@ def block_bin_erase_all_blk(binary, blocks, pad=0, show=False):
     for block in blocks:
         block.block_erase_from_bin(binary, pad)
     if show:
-        cv2.imshow('before', bin_org)
-        cv2.imshow('after', binary)
+        # cv2.imshow('before', bin_org)
+        # cv2.imshow('after', binary)
         cv2.waitKey()
 
 
@@ -100,8 +100,8 @@ def block_division(grey, org, grad_thresh,
                 blocks.append(block)
                 # draw.draw_region(region, broad)
     if show:
-        cv2.imshow('flood-fill all', broad_all)
-        cv2.imshow('block', broad)
+        # cv2.imshow('flood-fill all', broad_all)
+        # cv2.imshow('block', broad)
         cv2.waitKey()
     if write_path is not None:
         cv2.imwrite(write_path, broad)
