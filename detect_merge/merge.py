@@ -195,6 +195,7 @@ def merge(img_path, compo_path, text_path, merge_root=None, is_paragraph=False, 
     text_json = json.load(open(text_path, 'r'))
 
     # load text and non-text compo
+    print('-- Loading text and non-text compo...')
     ele_id = 0
     compos = []
     for compo in compo_json['compos']:
@@ -212,11 +213,13 @@ def merge(img_path, compo_path, text_path, merge_root=None, is_paragraph=False, 
             text.resize(resize_ratio)
 
     # check the original detected elements
+    print('-- Checking the original detected elements...')
     img = cv2.imread(img_path)
     img_resize = cv2.resize(img, (compo_json['img_shape'][1], compo_json['img_shape'][0]))
     show_elements(img_resize, texts + compos, show=show, win_name='all elements before merging', wait_key=wait_key)
 
     # refine elements
+    print('-- Refining elements...')
     texts = refine_texts(texts, compo_json['img_shape'])
     elements = refine_elements(compos, texts)
     if is_remove_bar:
@@ -229,6 +232,7 @@ def merge(img_path, compo_path, text_path, merge_root=None, is_paragraph=False, 
     board = show_elements(img_resize, elements, show=show, win_name='elements after merging', wait_key=wait_key)
 
     # save all merged elements, clips and blank background
+    print('-- Saving all merged elements, clips and blank background...')
     name = img_path.replace('\\', '/').split('/')[-1][:-4]
     components = save_elements(pjoin(merge_root, name + '.json'), elements, img_resize.shape)
     cv2.imwrite(pjoin(merge_root, name + '.jpg'), board)
