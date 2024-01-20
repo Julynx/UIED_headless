@@ -53,8 +53,8 @@ if __name__ == '__main__':
                   'merge-contained-ele':True, 'merge-line-to-paragraph':False, 'remove-bar':True}
 
     # set input image path
-    input_path_img = 'data/input/input.jpg'
-    output_root = 'data/output'
+    input_path_img = '/UIED_headless/data/input/input.jpg'
+    output_root = '/UIED_headless/data/output'
 
     print("Resizing the input image...")
     resized_height = resize_height_by_longest_edge(input_path_img, resize_length=800)
